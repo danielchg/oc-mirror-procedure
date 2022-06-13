@@ -1,0 +1,63 @@
+---
+apiVersion: mirror.openshift.io/v1alpha1
+kind: ImageSetConfiguration
+mirror:
+  operators:
+    - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.10
+      headsOnly: false
+      packages:
+        - name: local-storage-operator
+          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: ocs-operator
+          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: sriov-network-operator
+          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: cincinnati-operator
+          startingVersion: '4.2.13'
+          channels:
+            - name: v1
+        - name: cluster-logging
+          startingVersion: '5.4.1-24'
+          channels:
+            - name: stable
+        - name: compliance-operator
+          startingVersion: '0.1.52'
+          channels:
+            - name: release-0.1
+        - name: elasticsearch-operator
+          startingVersion: '5.4.1-24'
+          channels:
+            - name: stable
+        - name: mcg-operator
+#          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: nfd
+          startingVersion: '0.4.3'
+          channels:
+            - name: stable
+        - name: odf-operator
+          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: openshift-special-resource-operator
+#          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: performance-addon-operator
+#          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+        - name: ptp-operator
+#          startingVersion: '4.10.0'
+          channels:
+            - name: stable
+storageConfig:
+  local:
+    path: /root/procedure-oc-mirror
